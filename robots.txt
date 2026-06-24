@@ -1,0 +1,9 @@
+# Allow all web crawlers to index the portfolio
+User-agent: *
+Allow: /
+
+# Prevent crawlers from indexing specific assets directly (optional, but good practice)
+Disallow: /cv.pdf
+
+# Point bots to your sitemap (update URL when deployed)
+Sitemap: https://jibransheikh.github.io/sitemap.xml

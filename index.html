@@ -1,144 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jibran Sheikh | Digital Strategust & Lead Tinkerer</title>
+    
+    <title>Jibran Sheikh | Digital Polymath & Lead Tinkerer</title>
+    <meta name="description" content="Part developer, part digital architect, and full-time problem solver. Specializing in Flutter, Supabase, and Civic Tech platforms.">
+    <meta name="keywords" content="Jibran Sheikh, Full-Stack Developer, Flutter app development, Supabase, Civic Tech, suso.world, Bonganagava, Nairobi">
+    
+    <meta property="og:title" content="Jibran Sheikh | Digital Polymath">
+    <meta property="og:description" content="I mix strict logic with creative chaos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jibransheikh.github.io">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jibran Sheikh",
+      "jobTitle": "Digital Strategist & Full-Stack Developer",
+      "url": "https://jibransheikh.github.io",
+      "sameAs": [
+        "https://github.com/Jibransheikh",
+        "https://linkedin.com/in/jibransheikhwork",
+        "https://binboi.biz"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Simba IT Services Limited"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Riara University"
+      },
+      "knowsAbout": [
+        "Flutter Mobile App Development",
+        "Supabase Backend Architecture",
+        "Civic Tech & NGO Platforms",
+        "Microsoft SQL Server",
+        "Linux Mint Configuration",
+        "Python & JavaScript Programming"
+      ],
+      "description": "Digital strategist with over five years of freelance experience building engaging web applications, dynamic NGO platforms, and hardware ecosystems."
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carbon: '#1a1a1b',
+                        amber: '#F07826',
+                        slateDark: '#1e1e1e'
+                    },
+                    fontFamily: {
+                        mono: ['Fira Code', 'monospace'],
+                        sans: ['Archivo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-carbon text-slate-300">
+<body class="antialiased selection:bg-amber selection:text-carbon bg-carbon text-slate-300">
     <div class="grain"></div>
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
-        <div class="text-xl font-bold tracking-tighter text-white uppercase">js<span class="text-orange-500">.</span></div>
-        <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.3em] font-mono">
-            <a href="#about" class="hover:text-orange-500 transition-colors">.bio</a>
-            <a href="#work" class="hover:text-orange-500 transition-colors">.builds</a>
-            <a href="#contact" class="hover:text-orange-500 transition-colors">.talk</a>
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5 bg-carbon/80">
+        <div class="text-xl font-bold tracking-tighter text-white uppercase select-none">js<span class="text-amber">.</span></div>
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-mono">
+            <a href="#about" class="hover:text-amber transition-colors">.bio</a>
+            <a href="#builds" class="hover:text-amber transition-colors">.builds</a>
+            <a href="#contact" class="hover:text-amber transition-colors">.talk</a>
         </div>
     </nav>
 
     <main class="relative pt-32 px-6 md:px-12 max-w-7xl mx-auto">
+        
         <section class="min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-12 border-b border-white/5 pb-20">
             <div class="lg:w-2/3">
-                <div class="inline-block px-3 py-1 border border-orange-500/50 text-[10px] font-mono text-orange-500 mb-6 uppercase" data-aos="fade-up">
+                <div class="inline-block px-3 py-1 border border-amber/30 text-[10px] font-mono text-amber mb-6 uppercase">
                     STATUS: OPERATIONAL // NAIROBI
                 </div>
-                <h1 class="text-5xl md:text-8xl font-black text-white leading-none mb-8 tracking-tighter" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="text-5xl md:text-8xl font-black text-white leading-none mb-8 tracking-tighter uppercase">
                     Jibran<br>Sheikh.
                 </h1>
-                <p class="max-w-xl text-xl text-slate-400 mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                   Part developer, part digital architect, and full-time problem solver. Over 5 years turning 'what if' into 'it works' without the headache.
+                <p class="max-w-xl text-xl text-slate-400 mb-10 leading-relaxed">
+                    Part developer, part digital architect, and full-time problem solver...sometimes maker. Over 5 years turning 'what if' into 'it works' without the headache.
                 </p>
-                <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#work" class="px-8 py-4 bg-white text-black font-bold uppercase text-[10px] tracking-widest hover:bg-orange-500 hover:text-white transition-all">View My Work</a>
-                    <a href="#contact" class="px-8 py-4 border border-slate-700 text-white font-bold uppercase text-[10px] tracking-widest hover:border-white transition-all">Let's Connect</a>
+                <div class="flex flex-wrap gap-4 font-mono text-[11px] tracking-widest font-bold">
+                    <a href="#builds" class="px-8 py-4 bg-white text-carbon uppercase hover:bg-amber hover:text-carbon transition-colors duration-300">
+                        View Deployments
+                    </a>
+                    <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-white/20 text-white uppercase hover:border-white transition-colors duration-300 flex items-center gap-2">
+                        Grab CV <span class="text-amber">&darr;</span>
+                    </a>
                 </div>
             </div>
-            <div class="lg:w-1/3 flex justify-center" data-aos="fade-left">
+            
+            <div class="lg:w-1/3 flex justify-center">
                 <div class="relative p-2 border border-white/10 bg-white/5 grayscale hover:grayscale-0 transition-all duration-700">
-                    <img src="images/profile.png" alt="Jibran Sheikh" class="max-w-[280px] md:max-w-xs shadow-2xl">
-                    <div class="absolute -bottom-4 -right-4 bg-orange-500 text-black text-[9px] font-bold px-3 py-1 uppercase font-mono">Lead_Tinkerer.png</div>
+                    <img src="assets/profile.avif" alt="Jibran Sheikh" class="max-w-[280px] md:max-w-xs shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 bg-amber text-carbon text-[9px] font-bold px-3 py-1 uppercase font-mono shadow-lg">
+                        Lead_Tinkerer.me
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div class="lg:col-span-7" data-aos="fade-right">
-                <h2 class="text-xs font-mono text-orange-500 uppercase tracking-[0.4em] mb-8">// digital_polymath</h2>
+        <section id="about" class="py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 border-b border-white/5">
+            <div class="lg:col-span-7">
+                <h2 class="text-xs font-mono text-amber uppercase tracking-[0.4em] mb-8">// digital_polymath</h2>
                 <p class="text-3xl text-white font-bold leading-tight mb-8">I mix strict logic with creative chaos.</p>
-                <p class="text-slate-400 text-lg mb-12">Whether it's developing engaging websites, managing digital strategies, or creating impactful content, I help businesses thrive in the digital landscape.</p>
+                <p class="text-slate-400 text-lg mb-12 leading-relaxed">
+                    Whether I am building full-stack platforms from a Linux terminal, acting as the digital anchor for Simba IT Services, or setting up complex databases for startups, I help ideas thrive in the digital landscape.
+                </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-12 font-mono text-[10px]">
                     <div>
-                        <h3 class="text-orange-500 uppercase mb-4 tracking-widest">Education.log</h3>
-                        <ul class="space-y-2 opacity-60">
-                            <li>🎓 IT Diploma — Riara University</li>
-                            <li>📜 Cisco — Networking</li>
-                            <li>🔗 IBM — Blockchain & Cybersecurity</li>
+                        <h3 class="text-amber uppercase mb-4 tracking-widest border-b border-amber/20 pb-2 inline-block">Anchors.cmd</h3>
+                        <ul class="space-y-3 opacity-80 mt-2 text-xs">
+                            <li>> Web Dev @ Simba IT</li>
+                            <li>> 5+ Yrs Freelance Architect</li>
+                            <li>> IT Diploma - Riara Univ.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-orange-500 uppercase mb-4 tracking-widest">Specialties.cmd</h3>
-                        <ul class="space-y-2 opacity-60">
-                            <li>📱 App Development</li>
-                            <li>🎨 Visual Identity Systems</li>
-                            <li>💻 User Experience Design</li>
-                            <li>💻 WordPress Development</li>
-                            <li>☕ coffee connoisseur</li>
+                        <h3 class="text-amber uppercase mb-4 tracking-widest border-b border-amber/20 pb-2 inline-block">Specialties.cmd</h3>
+                        <ul class="space-y-3 opacity-80 mt-2 text-xs">
+                            <li>> System Architecture</li>
+                            <li>> UX/UI & Branding</li>
+                            <li>> Coffee Connoisseur</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="lg:col-span-5" data-aos="fade-left">
-                <div class="p-8 border border-white/5 bg-white/5">
-                    <h3 class="font-mono text-white text-[10px] tracking-widest mb-8 uppercase text-center">Skill_Matrix.dmg</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">HTML & CSS</span> <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span> <span class="skill-tag">Social Media </span>
-                        <span class="skill-tag">Figma</span> <span class="skill-tag">Creative Suite Proficiency</span>
-                        <span class="skill-tag">SEO</span> <span class="skill-tag">WordPress</span>
-                        <span class="skill-tag">Flutter</span> <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">AI tools</span> <span class="skill-tag">VS Code</span>
+            
+            <div class="lg:col-span-5">
+                <div class="p-8 border border-white/5 bg-slateDark h-full flex flex-col justify-center">
+                    <h3 class="font-mono text-white text-[11px] tracking-widest mb-8 uppercase text-center border-b border-white/10 pb-4">Skill_Matrix.json</h3>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="skill-tag border-amber text-amber">Flutter App Dev</span>
+                        <span class="skill-tag border-amber text-amber">Supabase Backend</span>
+                        <span class="skill-tag">Python & JS</span>
+                        <span class="skill-tag">HTML & CSS</span>
+                        <span class="skill-tag">Linux Mint Env</span>
+                        <span class="skill-tag">MS SQL Server</span>
+                        <span class="skill-tag">Figma & Adobe Suite</span>
+                        <span class="skill-tag">SEO Strategy</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="py-24 border-t border-white/5">
-            <h2 class="text-xs font-mono text-orange-500 uppercase tracking-widest mb-16">// deployment_history</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
+        <section id="builds" class="py-24">
+            <h2 class="text-xs font-mono text-amber uppercase tracking-widest mb-16">// deployment_history</h2>
+            
+            <div class="flex flex-col gap-8">
                 
-                <div class="bg-carbon p-10 group hover:bg-orange-500 transition-all duration-500 cursor-pointer relative overflow-hidden" onclick="window.location.href='./binboi/'" data-aos="fade-up">
-                    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity font-mono text-[9px] text-black font-bold uppercase tracking-tighter">
-                        [ Click to View Project ]
-                    </div>
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">Bin-Boi Biz</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-black/80">Flagship hardware & digital ecosystem. Focusing on e-waste and connectivity.</p>
+                <div class="project-card p-8 md:p-12 relative overflow-hidden group">
+                    <div class="absolute top-8 right-8 font-mono text-[10px] text-amber tracking-widest border border-amber/30 px-2 py-1">IMPACT_PLATFORMS</div>
+                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Civic Tech & NGOs</h3>
+                    <p class="font-mono text-[11px] text-slate-500 mb-6">#WebDev #DataManagement #Transparency</p>
+                    
+                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-6">
+                        Developed and maintained dynamic public platforms, including <strong>suso.world</strong> and <strong>Bonganagava.com</strong>. Engineered these systems to provide non-profit organizations with essential digital infrastructure for reliable communication, fundraising tracking, and public transparency.
+                    </p>
                 </div>
 
-                <div class="bg-carbon p-10 group hover:bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">Azem Kenya</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-slate-600">Designed, developed, and deployed complete website from wireframe to launch.</p>
+                <div class="project-card p-8 md:p-12 relative overflow-hidden group">
+                    <div class="absolute top-8 right-8 font-mono text-[10px] text-slate-500 tracking-widest px-2 py-1">SOFTWARE_ENGINEERING</div>
+                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Pro-Act Application</h3>
+                    <p class="font-mono text-[11px] text-slate-500 mb-6">#Flutter #Supabase #SystemArchitecture</p>
+                    
+                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-8">
+                        A gamified social accountability system with teeth. Architected a cross-platform Flutter application powered by a robust Supabase backend. Implemented core user authentication, encrypted databases, and interactive "vows" to replace traditional, static productivity tools. 
+                    </p>
+                    
+                    <a href="https://proact.dev.binboi.biz" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-white uppercase tracking-widest hover:text-amber transition-colors flex items-center gap-2 w-fit border-b border-white/20 hover:border-amber pb-1">
+                        Run Pro-Act Terminal &rarr;
+                    </a>
                 </div>
 
-                <div class="bg-carbon p-10 group hover:bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">CarlteQ</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-slate-600">Spearheaded development for consulting and healthcare sectors.</p>
+                <div class="project-card p-8 md:p-12 relative overflow-hidden group cursor-pointer" onclick="window.open('https://binboi.biz', '_blank')">
+                    <div class="absolute top-8 right-8 font-mono text-[10px] text-slate-500 tracking-widest">[ EXTERNAL DOMAIN ]</div>
+                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Bin-Boi.Biz</h3>
+                    <p class="font-mono text-[11px] text-slate-500 mb-6">#Hardware #EWaste #StudioEcosystem</p>
+                    
+                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-4">
+                        The flagship digital sandbox. A dedicated hub solving localized e-waste through hardware modding, interactive storytelling, and community tools. Features custom API integrations and terminal-based logic games.
+                    </p>
                 </div>
 
-                <div class="bg-carbon p-10 group hover:bg-white transition-all duration-500" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">ConneQt</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-slate-600">Creative Direction. Visual guidelines, merchandise, and social strategies.</p>
-                </div>
-
-                <div class="bg-carbon p-10 group hover:bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">Arrow Motors EA</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-slate-600">Building corporate digital hub and scalable automotive e-commerce platform.</p>
-                </div>
-
-                <div class="bg-carbon p-10 group hover:bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold text-white group-hover:text-black mb-4 uppercase">NGO Support</h3>
-                    <p class="text-sm text-slate-400 group-hover:text-slate-600">Tech support for suso.world and Bonganagava.com. Email systems management.</p>
+                <div class="pt-8 text-center">
+                    <a href="archive.html" class="inline-block font-mono text-[11px] text-slate-400 hover:text-amber border border-white/10 hover:border-amber/50 px-6 py-3 transition-all">
+                        > cd ./archive_logs // View complete 5-year history
+                    </a>
                 </div>
 
             </div>
         </section>
 
-        <section id="contact" class="py-32 flex flex-col items-center text-center">
+        <section id="contact" class="py-32 flex flex-col items-center text-center border-t border-white/5">
             <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter uppercase">Let's Talk.</h2>
-            <div class="flex flex-col md:flex-row gap-8 justify-center font-mono text-xs">
-                <a href="mailto:Jibransheikh.work@gmail.com" class="text-white hover:text-orange-500 uppercase tracking-widest">Jibransheikh.work@gmail.com</a>
-                <a href="tel:+254717516439" class="text-white hover:text-orange-500 uppercase tracking-widest">+254-717-516-439</a>
+            <p class="text-slate-400 max-w-md mb-12 font-mono text-sm">Whether you want to build a gamified app, talk code, or grab coffee—ping the server.</p>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center font-mono text-xs font-bold">
+                <a href="mailto:Jibransheikh.work@gmail.com" class="px-8 py-4 bg-amber text-carbon hover:bg-white transition-colors uppercase tracking-widest">
+                    Jibransheikh.work@gmail.com
+                </a>
+                <a href="tel:+254717516439" class="px-8 py-4 border border-white/20 text-white hover:border-amber hover:text-amber transition-colors uppercase tracking-widest">
+                    +254-717-516-439
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-[9px] font-mono uppercase tracking-[0.5em] opacity-30">© 2026 Jibran Sheikh. Do not copy without coffee.</p>
+    <footer class="py-12 border-t border-white/5 bg-carbon text-center">
+        <p class="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-600">© 2026 Jibran Sheikh. Do not copy without coffee.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

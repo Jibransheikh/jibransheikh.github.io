@@ -1,55 +1,70 @@
+/* Base Resets and Variables */
 :root {
-    --bg-color: #1a1a1b;
+    --bg-color: #121212;
+    --accent-color: #F07826;
 }
 
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    position: relative;
     background-color: var(--bg-color);
 }
 
+/* Ambient Grain Effect */
 .grain {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
     pointer-events: none;
     z-index: 100;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Tag Styles */
 .skill-tag {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 18px;
-    font-family: ui-monospace, monospace;
-    font-size: 10px;
+    padding: 8px 16px;
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #94a3b8;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-out;
+    cursor: default;
 }
 
 .skill-tag:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
+    background: var(--accent-color);
+    color: #121212;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
-/* Wing Colors */
-.text-dev { color: #06b6d4; }
-.border-dev { border-color: #06b6d4; }
+/* Project Card Strict Architecture */
+/* Notice: The card itself does NOT translate on hover. Only the border changes. */
+.project-card {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease;
+}
 
-.text-studio { color: #a855f7; }
-.border-studio { border-color: #a855f7; }
+.project-card:hover {
+    border-color: var(--accent-color);
+}
 
-.text-labs { color: #f97316; }
-.border-labs { border-color: #f97316; }
+/* Internal Animation Logic */
+/* Only internal text elements move to keep the site feeling stable and premium */
+.internal-animate {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
 
+.project-card:hover .internal-animate {
+    transform: translateX(8px);
+    color: var(--accent-color);
+}
+
+/* Ensure AOS doesn't block interactions */
 [data-aos] {
     pointer-events: none;
 }
