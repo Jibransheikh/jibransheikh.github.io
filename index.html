@@ -1,24 +1,32 @@
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>Jibran Sheikh | Digital Polymath & Lead Tinkerer</title>
-    <meta name="description" content="Part developer, part digital architect, and full-time problem solver. Specializing in Flutter, Supabase, and Civic Tech platforms.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jibran Sheikh — Developer &amp; Digital Architect</title>
+    <meta name="description" content="Part developer, part digital architect, and full-time problem solver. Building Flutter apps, civic platforms, and the systems behind them from Nairobi.">
     <meta name="keywords" content="Jibran Sheikh, Full-Stack Developer, Flutter app development, Supabase, Civic Tech, suso.world, Bonganagava, Nairobi">
-    
-    <meta property="og:title" content="Jibran Sheikh | Digital Polymath">
-    <meta property="og:description" content="I mix strict logic with creative chaos.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="https://jibransheikh.binboi.biz/">
+
+    <meta property="og:title" content="Jibran Sheikh — Developer &amp; Digital Architect">
+    <meta property="og:description" content="I build the thing — and the system behind it.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jibransheikh.github.io">
-    
+    <meta property="og:url" content="https://jibransheikh.binboi.biz/">
+    <meta property="og:image" content="https://jibransheikh.binboi.biz/images/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Jibran Sheikh",
       "jobTitle": "Developer by trade, Creator by curiosity.",
-      "url": "https://jibransheikh.github.io",
+      "url": "https://jibransheikh.binboi.biz/",
       "sameAs": [
         "https://github.com/Jibransheikh",
         "https://linkedin.com/in/jibransheikhwork",
@@ -28,10 +36,6 @@
         "@type": "Organization",
         "name": "Simba IT Services Limited"
       },
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "Riara University"
-      },
       "knowsAbout": [
         "Flutter Mobile App Development",
         "Supabase Backend Architecture",
@@ -40,192 +44,279 @@
         "Linux Mint Configuration",
         "Python & JavaScript Programming"
       ],
-      "description": "Digital strategist with over five years of freelance experience building engaging web applications, dynamic NGO platforms, and hardware ecosystems."
+      "description": "Digital strategist with over seven years of experience building engaging web applications, dynamic NGO platforms, and hardware ecosystems."
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        carbon: '#1a1a1b',
-                        amber: '#F07826',
-                        slateDark: '#1e1e1e'
-                    },
-                    fontFamily: {
-                        mono: ['Fira Code', 'monospace'],
-                        sans: ['Archivo', 'sans-serif'],
-                    }
-                }
+        // Set theme before paint. Light is the default.
+        try {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.dataset.theme = "dark";
             }
-        }
+        } catch (e) {}
+        document.documentElement.classList.add("has-js");
+        // If script.js fails to load, don't leave reveal content hidden.
+        setTimeout(function () {
+            if (!document.documentElement.dataset.jsReady) {
+                document.documentElement.classList.remove("has-js");
+            }
+        }, 1500);
     </script>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="antialiased selection:bg-amber selection:text-carbon bg-carbon text-slate-300">
-    <div class="grain"></div>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Jibran Sheikh, home">
+                <span class="brand-name">js<span>.</span></span>
+                <span class="brand-note">jibran sheikh</span>
+            </a>
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5 bg-carbon/80">
-        <div class="text-xl font-bold tracking-tighter text-white uppercase select-none">js<span class="text-amber">.</span></div>
-        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-mono">
-            <a href="#about" class="hover:text-amber transition-colors">.bio</a>
-            <a href="#builds" class="hover:text-amber transition-colors">.builds</a>
-            <a href="#contact" class="hover:text-amber transition-colors">.talk</a>
+            <nav class="desknav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="iconbtn themebtn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+                    </svg>
+                    <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
+
+                <button class="iconbtn menubtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 8h16M4 16h16"/>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </nav>
 
-    <main class="relative pt-32 px-6 md:px-12 max-w-7xl mx-auto">
-        
-        <section class="min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-12 border-b border-white/5 pb-20">
-            <div class="lg:w-2/3">
-                <div class="inline-block px-3 py-1 border border-amber/30 text-[10px] font-mono text-amber mb-6 uppercase">
-                    STATUS: OPERATIONAL // NAIROBI
-                </div>
-                <h1 class="text-5xl md:text-8xl font-black text-white leading-none mb-8 tracking-tighter uppercase">
-                    Jibran<br>Sheikh.
-                </h1>
-                <p class="max-w-xl text-xl text-slate-400 mb-10 leading-relaxed">
-                    Part developer, part digital architect, and full-time problem solver. Over 5 years turning 'what if' into 'it works' without the headache.
+        <div class="mobile-menu" id="mobile-menu" hidden>
+            <nav aria-label="Mobile">
+                <a href="#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="mobile-menu-foot">Nairobi, Kenya &middot; Building since 2019</p>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero wrap">
+            <div class="hero-head reveal" style="--delay: 0.02s">
+                <button type="button" class="avatar-frame" aria-label="Enlarge photo of Jibran Sheikh">
+                    <img src="images/profile.avif" alt="" width="72" height="72">
+                </button>
+                <p class="status">
+                    <button type="button" class="status-toggle" aria-label="Cycle status message" aria-controls="status-text">
+                        <span class="status-dot" aria-hidden="true"></span>
+                    </button>
+                    <span class="status-text" id="status-text" aria-live="polite">Nairobi, Kenya &middot; Lead Tinkerer at Binboi</span>
                 </p>
-                <div class="flex flex-wrap gap-4 font-mono text-[11px] tracking-widest font-bold">
-                    <a href="#builds" class="px-8 py-4 bg-white text-carbon uppercase hover:bg-amber hover:text-carbon transition-colors duration-300">
-                        View Deployments
-                    </a>
-                    <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-white/20 text-white uppercase hover:border-white transition-colors duration-300 flex items-center gap-2">
-                        Grab CV <span class="text-amber">&darr;</span>
-                    </a>
-                </div>
             </div>
-            
-            <div class="lg:w-1/3 flex justify-center">
-                <div class="relative p-2 border border-white/10 bg-white/5 grayscale hover:grayscale-0 transition-all duration-700">
-                    <img src="images/profile.avif" alt="Jibran Sheikh" class="max-w-[280px] md:max-w-xs shadow-2xl">
-                    <div class="absolute -bottom-4 -right-4 bg-amber text-carbon text-[9px] font-bold px-3 py-1 uppercase font-mono shadow-lg">
-                        Lead_Tinkerer.me
-                    </div>
+
+            <h1 class="reveal" style="--delay: 0.1s">I build the thing &mdash; and the system behind it.</h1>
+
+            <p class="hero-desc reveal" style="--delay: 0.18s">
+                Developer, designer and digital architect. Over seven years turning messy problems into
+                Flutter apps, civic platforms, and tools people actually rely on.
+            </p>
+
+            <div class="hero-actions reveal" style="--delay: 0.26s">
+                <a href="#work" class="btn">See selected work <span class="arr" aria-hidden="true">&nearr;</span></a>
+                <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="text-link">Download CV &darr;</a>
+            </div>
+
+            <div class="roles reveal" style="--delay: 0.34s">
+                <span class="role">
+                    <span class="role-label">Founder</span>
+                    <a href="https://binboi.biz" target="_blank" rel="noopener noreferrer">Binboi Studios</a>
+                </span>
+                <span class="role">
+                    <span class="role-label">Co-founder</span>
+                    <a href="https://carlteq.io" target="_blank" rel="noopener noreferrer">Carlteq</a>
+                </span>
+                <span class="role">
+                    <span class="role-label">Board</span>
+                    <a href="https://conneqtke.org/" target="_blank" rel="noopener noreferrer">ConneQt</a>
+                </span>
+            </div>
+        </section>
+
+        <section id="about" class="section wrap">
+            <div class="section-head reveal">
+                <p class="eyebrow">01 / About</p>
+                <span class="section-aside">The short version</span>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-intro reveal">
+                    <h2 class="about-title">I mix strict logic with creative chaos.</h2>
+                    <p class="about-lead">
+                        I craft digital experiences with Flutter, WordPress, or whatever the problem
+                        calls for &mdash; and shape the brand story around them through design and video.
+                    </p>
+                    <p class="about-lead">
+                        Great code and design are two sides of the same coin. Best paired with a fresh
+                        perspective and a good shawarma.
+                    </p>
+                </div>
+                <div class="about-copy reveal" style="--delay: 0.08s">
+                    <dl class="facts">
+                        <div class="fact-row"><dt>Currently</dt><dd>Simba IT Services Limited</dd></div>
+                        <div class="fact-row"><dt>Open to</dt><dd>Selected projects</dd></div>
+                        <div class="fact-row"><dt>Experience</dt><dd>7+ years</dd></div>
+                        <div class="fact-row fact-row--specialties">
+                            <dt>Specialties</dt>
+                            <dd>
+                                <ul class="specialties">
+                                    <li>System Architecture</li>
+                                    <li>UX/UI &amp; Branding</li>
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 border-b border-white/5">
-            <div class="lg:col-span-7">
-                <h2 class="text-xs font-mono text-amber uppercase tracking-[0.4em] mb-8">// digital_polymath</h2>
-                <p class="text-3xl text-white font-bold leading-tight mb-8">I mix strict logic with creative chaos.</p>
-                <p class="text-slate-400 text-lg mb-12 leading-relaxed">
-                    I craft digital experiences with Flutter, WordPress, or anything i decide to sink my teeth into while shaping brand stories through design and video. I believe great code and design are two sides of the same coin—best paired with a fresh perspective and a good shawarma.
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-12 font-mono text-[10px]">
-                    <div>
-                        <h3 class="text-amber uppercase mb-4 tracking-widest border-b border-amber/20 pb-2 inline-block">Anchors.cmd</h3>
-                        <ul class="space-y-3 opacity-80 mt-2 text-xs">
-                            <li>> Web Dev @ Simba IT</li>
-                            <li>> 5+ Yrs Freelance Architect</li>
-                            <li>> IT Diploma - Riara Univ.</li>
+        <section class="section wrap">
+            <div class="section-head reveal">
+                <p class="eyebrow">02 / Toolkit</p>
+                <span class="section-aside">What I reach for</span>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool reveal"><span class="tool-name">Flutter</span><span class="tool-cat">Apps</span></div>
+                <div class="tool reveal" style="--delay: 0.04s"><span class="tool-name">Supabase</span><span class="tool-cat">Backend</span></div>
+                <div class="tool reveal" style="--delay: 0.08s"><span class="tool-name">Python &amp; JS</span><span class="tool-cat">Scripting</span></div>
+                <div class="tool reveal" style="--delay: 0.12s"><span class="tool-name">HTML &amp; CSS</span><span class="tool-cat">Web</span></div>
+                <div class="tool reveal" style="--delay: 0.16s"><span class="tool-name">MS SQL Server</span><span class="tool-cat">Data</span></div>
+                <div class="tool reveal" style="--delay: 0.2s"><span class="tool-name">Figma &amp; SEO</span><span class="tool-cat">Design / Growth</span></div>
+            </div>
+        </section>
+
+        <section id="work" class="section wrap">
+            <div class="section-head reveal">
+                <p class="eyebrow">03 / Selected work</p>
+                <span class="section-aside">2020 &mdash; 2026</span>
+            </div>
+
+            <ul class="work-list">
+                <li class="work-row reveal" data-commit="git commit -m &quot;civic tech, but make it useful&quot;">
+                    <div class="work-main">
+                        <p class="work-index">01</p>
+                        <h3>Civic Tech &amp; NGOs</h3>
+                        <p class="work-desc">
+                            Public platforms for non-profits, including
+                            <a class="link" href="https://suso.world" target="_blank" rel="noopener noreferrer">suso.world</a>
+                            and <a class="link" href="https://bonganagava.com" target="_blank" rel="noopener noreferrer">Bonganagava</a>
+                            &mdash; built for communication, tracking, and transparency.
+                        </p>
+                        <ul class="work-tags">
+                            <li>Web development</li>
+                            <li>Data management</li>
+                            <li>Transparency</li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="text-amber uppercase mb-4 tracking-widest border-b border-amber/20 pb-2 inline-block">Specialties.cmd</h3>
-                        <ul class="space-y-3 opacity-80 mt-2 text-xs">
-                            <li>> System Architecture</li>
-                            <li>> UX/UI & Branding</li>
-                            <li>> Coffee Connoisseur</li>
+                    <div class="work-aside"></div>
+                </li>
+
+                <li class="work-row reveal" data-commit="git commit -m &quot;it works on my machine&quot;">
+                    <div class="work-main">
+                        <p class="work-index">02</p>
+                        <h3>Pro-Act</h3>
+                        <p class="work-desc">
+                            A gamified accountability app on Flutter and Supabase &mdash; authentication,
+                            encrypted data, and interactive vows instead of another spreadsheet.
+                        </p>
+                        <ul class="work-tags">
+                            <li>Flutter</li>
+                            <li>Supabase</li>
+                            <li>System architecture</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            
-            <div class="lg:col-span-5">
-                <div class="p-8 border border-white/5 bg-slateDark h-full flex flex-col justify-center">
-                    <h3 class="font-mono text-white text-[11px] tracking-widest mb-8 uppercase text-center border-b border-white/10 pb-4">Skill_Matrix.json</h3>
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span class="skill-tag border-amber text-amber">Flutter App Dev</span>
-                        <span class="skill-tag border-amber text-amber">Supabase Backend</span>
-                        <span class="skill-tag">Python & JS</span>
-                        <span class="skill-tag">HTML & CSS</span>
-                        <span class="skill-tag">Linux Env</span>
-                        <span class="skill-tag">MS SQL Server</span>
-                        <span class="skill-tag">Figma & Creative Design Suite</span>
-                        <span class="skill-tag">SEO Strategy</span>
+                    <div class="work-aside">
+                        <a class="work-link" href="https://proact.dev.binboi.biz" target="_blank" rel="noopener noreferrer">Visit <span class="arr" aria-hidden="true">&nearr;</span></a>
                     </div>
-                </div>
+                </li>
+
+            </ul>
+
+            <div class="more-links">
+                <a class="more-link" href="projects.html">All projects &amp; experiments <span class="arr" aria-hidden="true">&rarr;</span></a>
+                <a class="more-link" href="archive.html">Work history <span class="arr" aria-hidden="true">&rarr;</span></a>
             </div>
         </section>
 
-        <section id="builds" class="py-24">
-            <h2 class="text-xs font-mono text-amber uppercase tracking-widest mb-16">// deployment_history</h2>
-            
-            <div class="flex flex-col gap-8">
-                
-                <div class="project-card p-8 md:p-12 relative overflow-hidden group">
-                    <div class="absolute top-8 right-8 font-mono text-[10px] text-amber tracking-widest border border-amber/30 px-2 py-1">IMPACT_PLATFORMS</div>
-                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Civic Tech & NGOs</h3>
-                    <p class="font-mono text-[11px] text-slate-500 mb-6">#WebDev #DataManagement #Transparency</p>
-                    
-                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-6">
-                        Developed and maintained dynamic public platforms, including <strong>suso.world</strong> and <strong>Bonganagava.com</strong>. Engineered these systems to provide non-profit organizations with essential digital infrastructure for reliable communication, fundraising tracking, and public transparency.
-                    </p>
-                </div>
-
-                <div class="project-card p-8 md:p-12 relative overflow-hidden group">
-                    <div class="absolute top-8 right-8 font-mono text-[10px] text-slate-500 tracking-widest px-2 py-1">SOFTWARE_ENGINEERING</div>
-                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Pro-Act Application</h3>
-                    <p class="font-mono text-[11px] text-slate-500 mb-6">#Flutter #Supabase #SystemArchitecture</p>
-                    
-                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-8">
-                        A gamified social accountability system with teeth. Architected a cross-platform Flutter application powered by a robust Supabase backend. Implemented core user authentication, encrypted databases, and interactive "vows" to replace traditional, static productivity tools. 
-                    </p>
-                    
-                    <a href="https://proact.dev.binboi.biz" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-white uppercase tracking-widest hover:text-amber transition-colors flex items-center gap-2 w-fit border-b border-white/20 hover:border-amber pb-1">
-                        Run Pro-Act  &rarr;
-                    </a>
-                </div>
-
-                <div class="project-card p-8 md:p-12 relative overflow-hidden group cursor-pointer" onclick="window.open('https://binboi.biz', '_blank')">
-                    <div class="absolute top-8 right-8 font-mono text-[10px] text-slate-500 tracking-widest">[ EXTERNAL DOMAIN ]</div>
-                    <h3 class="internal-animate text-3xl font-black text-white mb-2 uppercase tracking-tight">Bin-Boi.Biz</h3>
-                    <p class="font-mono text-[11px] text-slate-500 mb-6">#Hardware #EWaste #StudioEcosystem</p>
-                    
-                    <p class="text-base text-slate-300 max-w-3xl leading-relaxed mb-4">
-                        The flagship digital sandbox. A dedicated hub solving localized e-waste through hardware modding, interactive storytelling, and community tools. Features custom API integrations and terminal-based logic games.
-                    </p>
-                </div>
-
-                <div class="pt-8 text-center">
-                    <a href="archive.html" class="inline-block font-mono text-[11px] text-slate-400 hover:text-amber border border-white/10 hover:border-amber/50 px-6 py-3 transition-all">
-                        > cd ./archive_logs // View complete 5-year history
-                    </a>
-                </div>
-
+        <section id="contact" class="section wrap contact">
+            <div class="section-head reveal">
+                <p class="eyebrow">04 / Contact</p>
+                <span class="section-aside">Say hello</span>
             </div>
-        </section>
 
-        <section id="contact" class="py-32 flex flex-col items-center text-center border-t border-white/5">
-            <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter uppercase">Let's Talk.</h2>
-            <p class="text-slate-400 max-w-md mb-12 font-mono text-sm">Whether you want to build a gamified app, talk code, or grab coffee—ping the server.</p>
-            
-            <div class="flex flex-col md:flex-row gap-8 justify-center font-mono text-xs font-bold">
-                <a href="mailto:Jibransheikh.work@gmail.com" class="px-8 py-4 bg-amber text-carbon hover:bg-white transition-colors uppercase tracking-widest">
-                    Jibransheikh.work@gmail.com
-                </a>
-                <a href="tel:+254717516439" class="px-8 py-4 border border-white/20 text-white hover:border-amber hover:text-amber transition-colors uppercase tracking-widest">
-                    +254-717-516-439
-                </a>
+            <h2 class="reveal">Have something worth building?</h2>
+            <p class="contact-copy reveal" style="--delay: 0.06s">
+                A gamified app, a tricky system, a brand that needs a sharper edge &mdash; or just a good
+                argument about architecture.
+            </p>
+            <a class="email-link reveal" style="--delay: 0.12s" href="mailto:Jibransheikh.work@gmail.com">Jibransheikh.work@gmail.com</a>
+
+            <div class="phone-reveal reveal" style="--delay: 0.16s">
+                <button type="button" class="specialty specialty--scratch"
+                    aria-label="Scratch to reveal Jibran's phone number"
+                    aria-describedby="phone-hint" aria-pressed="false"
+                    data-reveal-label="Jibran's phone number: +254 717 516 439"
+                    data-reveal-status="Phone number revealed: +254 717 516 439. A call link is now available."
+                    data-reveal-target="#phone-call-link">
+                    <span class="specialty-face" aria-hidden="true">
+                        <span class="specialty-text">+254 717 516 439</span>
+                        <span class="specialty-note">tap to call below</span>
+                    </span>
+                    <canvas class="specialty-cover" aria-hidden="true"></canvas>
+                    <span class="specialty-prompt" aria-hidden="true">scratch for my number</span>
+                </button>
+                <span class="sr-only" id="phone-hint">Drag across the card to scratch it, or press Enter to reveal the phone number.</span>
+                <span class="sr-only" aria-live="polite" data-scratch-status></span>
+                <a class="phone phone-link" id="phone-call-link" href="tel:+254717516439" hidden>Call +254 717 516 439 <span class="arr" aria-hidden="true">&nearr;</span></a>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5 bg-carbon text-center">
-        <p class="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-600">© 2026 Jibran Sheikh. Do not copy without coffee.</p>
+    <footer class="site-footer wrap">
+        <div class="footer-links">
+            <a href="https://github.com/Jibransheikh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/jibransheikhwork" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://binboi.biz" target="_blank" rel="noopener noreferrer">Binboi Studios</a>
+            <a href="https://conneqtke.org/" target="_blank" rel="noopener noreferrer">ConneQt</a>
+        </div>
+        <p>&copy; <span data-year>2026</span> Jibran Sheikh. Do not copy without coffee.</p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div class="lightbox" id="photo-lightbox" hidden>
+        <div class="lightbox-backdrop" data-lightbox-close></div>
+        <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Photo of Jibran Sheikh">
+            <img src="images/profile.avif" alt="Jibran Sheikh" width="1529" height="1874">
+            <button type="button" class="lightbox-close" aria-label="Close photo">&times;</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

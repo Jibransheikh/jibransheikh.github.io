@@ -2,8 +2,7 @@
 User-agent: *
 Allow: /
 
-# Prevent crawlers from indexing specific assets directly (optional, but good practice)
-Disallow: /cv.pdf
+# Keep the CV out of search results
+Disallow: /assets/cv.pdf
 
-# Point bots to your sitemap (update URL when deployed)
-Sitemap: https://jibransheikh.github.io/sitemap.xml
+Sitemap: https://jibransheikh.binboi.biz/sitemap.xml

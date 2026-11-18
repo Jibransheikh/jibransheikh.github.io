@@ -1,56 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-carbon text-slate-300">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jibran Sheikh | Deployment Archive</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #121212; font-family: 'Fira Code', monospace; }
-    </style>
+
+    <title>Jibran Sheikh — Work History</title>
+    <meta name="description" content="The full professional history and deployment ledger of Jibran Sheikh.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="https://jibransheikh.binboi.biz/archive.html">
+
+    <meta property="og:title" content="Jibran Sheikh — Work History">
+    <meta property="og:description" content="The full professional history and deployment ledger of Jibran Sheikh.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jibransheikh.binboi.biz/archive.html">
+    <meta property="og:image" content="https://jibransheikh.binboi.biz/images/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script>
+        try {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.dataset.theme = "dark";
+            }
+        } catch (e) {}
+        document.documentElement.classList.add("has-js");
+        // If script.js fails to load, don't leave reveal content hidden.
+        setTimeout(function () {
+            if (!document.documentElement.dataset.jsReady) {
+                document.documentElement.classList.remove("has-js");
+            }
+        }, 1500);
+    </script>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="p-8 md:p-20">
-    <main class="max-w-3xl mx-auto">
-        <a href="index.html" class="text-amber hover:text-white transition-colors text-sm mb-12 block">&larr; back_to_terminal</a>
-        
-        <h1 class="text-2xl font-bold text-white mb-12 border-b border-white/10 pb-6">// deployment_ledger</h1>
-        
-        <div class="space-y-12">
-            <div class="border-l border-amber/30 pl-6">
-                <h3 class="text-white font-bold">Simba IT Services Limited & Simba Technology LTD</h3>
-                <p class="text-xs text-amber">Feb 2026 - Present</p>
-                <p class="text-slate-400 text-sm mt-2">Web Developer and Social Media Manager. Designed/managed company websites, system management, and curated content strategies.</p>
-            </div>
 
-            <div class="border-l border-white/10 pl-6">
-                <h3 class="text-white font-bold">Priority Activator Consulting (PAC)</h3>
-                <p class="text-xs text-slate-500">Mar 2022 - July 2022 | Mar 2023 - June 2026</p>
-                <p class="text-slate-400 text-sm mt-2">Web Designer and System Manager. Handled graphic design, Outlook configuration, CRM management, and business portfolios.</p>
-            </div>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Jibran Sheikh, home">
+                <span class="brand-name">js<span>.</span></span>
+                <span class="brand-note">jibran sheikh</span>
+            </a>
 
-            <div class="border-l border-white/10 pl-6">
-                <h3 class="text-white font-bold">Gordian Technovation LTD (Gordian Knotz)</h3>
-                <p class="text-xs text-slate-500">Nov 2020 - Mar 2023</p>
-                <p class="text-slate-400 text-sm mt-2">Web Developer, I.T technician & Programmer. Developed company website, managed social media, set up webmail, and created video reels.</p>
-            </div>
+            <nav class="desknav" aria-label="Primary">
+                <a href="index.html#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
 
-            <div class="border-l border-white/10 pl-6">
-                <h3 class="text-white font-bold">IMS Guru | Web Development Intern</h3>
-                <p class="text-xs text-slate-500">June 2020 - Aug 2020</p>
-                <p class="text-slate-400 text-sm mt-2">Maintained websites using HTML, CSS, and JavaScript; worked on Ellipsis and WordPress projects.</p>
-            </div>
+            <div class="header-actions">
+                <button class="iconbtn themebtn" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+                    </svg>
+                    <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
 
-            <div class="border-l border-white/10 pl-6">
-                <h3 class="text-white font-bold">Boma Hotels, School of Hospitality & Red Cross | IT Intern</h3>
-                <p class="text-xs text-slate-500">Nov 2019 - Mar 2020</p>
-                <p class="text-slate-400 text-sm mt-2">Conducted networking, customer support, managed servers, Telnet systems, PABX systems, and assisted with web development.</p>
+                <button class="iconbtn menubtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 8h16M4 16h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <div class="mt-20 pt-10 border-t border-white/10 text-[10px] text-slate-600">
-            [END_OF_LEDGER]
+        <div class="mobile-menu" id="mobile-menu" hidden>
+            <nav aria-label="Mobile">
+                <a href="index.html#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <p class="mobile-menu-foot">Nairobi, Kenya &middot; Building since 2019</p>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="page wrap">
+            <a href="index.html" class="back-link reveal"><span aria-hidden="true">&larr;</span> Back to home</a>
+            <h1 class="reveal" style="--delay: 0.08s">Work history</h1>
+            <p class="page-intro reveal" style="--delay: 0.14s">
+                A complete ledger of the roles, teams, and projects behind the work.
+            </p>
+
+            <ol class="ledger">
+                <li class="reveal">
+                    <h2>Simba IT Services Limited &amp; Simba Technology LTD</h2>
+                    <p class="ledger-meta">Feb 2026 &ndash; Present</p>
+                    <p class="ledger-desc">Web Developer and Social Media Manager. Designed and managed company websites, system management, and curated content strategies.</p>
+                </li>
+                <li class="reveal">
+                    <h2>Priority Activator Consulting (PAC)</h2>
+                    <p class="ledger-meta">Mar 2022 &ndash; Jul 2022 &middot; Mar 2023 &ndash; Jun 2026</p>
+                    <p class="ledger-desc">Web Designer and System Manager. Handled graphic design, Outlook configuration, CRM management, and business portfolios.</p>
+                </li>
+                <li class="reveal">
+                    <h2>Gordian Technovation LTD (Gordian Knotz)</h2>
+                    <p class="ledger-meta">Nov 2020 &ndash; Mar 2023</p>
+                    <p class="ledger-desc">Web Developer, IT technician and programmer. Developed the company website, managed social media, set up webmail, and created video reels.</p>
+                </li>
+                <li class="reveal">
+                    <h2>IMS Guru &mdash; Web Development Intern</h2>
+                    <p class="ledger-meta">Jun 2020 &ndash; Aug 2020</p>
+                    <p class="ledger-desc">Maintained websites using HTML, CSS, and JavaScript; worked on Ellipsis and WordPress projects.</p>
+                </li>
+                <li class="reveal">
+                    <h2>Boma Hotels, School of Hospitality &amp; Red Cross &mdash; IT Intern</h2>
+                    <p class="ledger-meta">Nov 2019 &ndash; Mar 2020</p>
+                    <p class="ledger-desc">Networking, customer support, server management, Telnet and PABX systems, and assistance with web development.</p>
+                </li>
+            </ol>
         </div>
     </main>
+
+    <footer class="site-footer wrap">
+        <div class="footer-links">
+            <a href="https://github.com/Jibransheikh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/jibransheikhwork" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://binboi.biz" target="_blank" rel="noopener noreferrer">Binboi Studios</a>
+            <a href="https://conneqtke.org/" target="_blank" rel="noopener noreferrer">ConneQt</a>
+        </div>
+        <p>&copy; <span data-year>2026</span> Jibran Sheikh. Do not copy without coffee.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
