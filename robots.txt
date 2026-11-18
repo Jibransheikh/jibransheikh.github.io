@@ -2,7 +2,8 @@
 User-agent: *
 Allow: /
 
-# Keep the CV out of search results
+# Keep the CV and the archived original site out of search results
 Disallow: /assets/cv.pdf
+Disallow: /legacy/
 
 Sitemap: https://jibransheikh.binboi.biz/sitemap.xml

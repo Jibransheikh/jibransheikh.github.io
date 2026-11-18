@@ -306,7 +306,27 @@
             <a href="https://binboi.biz" target="_blank" rel="noopener noreferrer">Binboi Studios</a>
             <a href="https://conneqtke.org/" target="_blank" rel="noopener noreferrer">ConneQt</a>
         </div>
-        <p>&copy; <span data-year>2026</span> Jibran Sheikh. Do not copy without coffee.</p>
+        <div class="footer-right">
+            <div class="footer-scratch">
+                <button type="button" class="specialty specialty--scratch footer-scratch-card"
+                    aria-label="Scratch to reveal the original site"
+                    aria-describedby="legacy-hint" aria-pressed="false"
+                    data-reveal-label="Open the original 2024 portfolio (opens in a new tab)"
+                    data-reveal-status="Easter egg unlocked: a link to the original 2024 portfolio is now in the footer."
+                    data-reveal-target="#legacy-link">
+                    <span class="specialty-face" aria-hidden="true">
+                        <span class="specialty-text">the original site</span>
+                        <span class="specialty-note">2024 edition</span>
+                    </span>
+                    <canvas class="specialty-cover" aria-hidden="true"></canvas>
+                    <span class="specialty-prompt" aria-hidden="true">scratch for the original</span>
+                </button>
+                <span class="sr-only" id="legacy-hint">Drag across the card to scratch it, or press Enter to reveal a link to the original site.</span>
+                <span class="sr-only" aria-live="polite" data-scratch-status></span>
+                <a class="legacy-link" id="legacy-link" href="legacy/index.html" target="_blank" rel="noopener noreferrer" hidden>The original site <span class="arr" aria-hidden="true">&nearr;</span></a>
+            </div>
+            <p>&copy; <span data-year>2026</span> Jibran Sheikh. Do not copy without coffee.</p>
+        </div>
     </footer>
 
     <div class="lightbox" id="photo-lightbox" hidden>

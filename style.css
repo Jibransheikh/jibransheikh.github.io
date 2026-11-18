@@ -1052,6 +1052,37 @@ html[data-theme="dark"] .themebtn .i-moon {
     color: var(--fg);
 }
 
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.footer-scratch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+}
+
+.footer-scratch-card {
+    min-width: 212px;
+}
+
+.legacy-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.legacy-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 /* ---------------------------------------------
    Archive page
 --------------------------------------------- */
@@ -1373,6 +1404,11 @@ html.chaos .tool:nth-child(3n) {
 
     .site-footer {
         margin-top: 80px;
+    }
+
+    .footer-right,
+    .footer-scratch {
+        align-items: flex-start;
     }
 
     .page {

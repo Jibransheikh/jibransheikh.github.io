@@ -128,12 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ---------- Scratch-off reveal ---------- */
-    const scratch = document.querySelector(".specialty--scratch");
-
-    if (scratch) {
+    /* ---------- Scratch-off reveals ---------- */
+    document.querySelectorAll(".specialty--scratch").forEach((scratch) => {
         const canvas = scratch.querySelector(".specialty-cover");
-        const status = document.querySelector("[data-scratch-status]");
+        const status = scratch.parentElement.querySelector("[data-scratch-status]");
         const revealLabel = scratch.dataset.revealLabel;
         const revealStatus = scratch.dataset.revealStatus;
         const revealTarget = scratch.dataset.revealTarget
@@ -309,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 attributeFilter: ["data-theme"]
             });
         }
-    }
+    });
 
     /* ---------- Portrait lightbox ---------- */
     const avatarButton = document.querySelector(".avatar-frame");
