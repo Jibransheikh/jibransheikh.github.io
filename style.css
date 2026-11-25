@@ -15,8 +15,8 @@
     --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-    --gutter: 40px;
-    --width: 760px;
+    --gutter: clamp(20px, 4vw, 64px);
+    --width: 1520px;
 }
 
 html[data-theme="dark"] {
@@ -336,6 +336,15 @@ html[data-theme="dark"] .themebtn .i-moon {
 .hero {
     padding-top: 96px;
     padding-bottom: 108px;
+}
+
+.hero-main,
+.hero-side {
+    min-width: 0;
+}
+
+.hero-side {
+    margin-top: 52px;
 }
 
 .hero-head {
@@ -960,6 +969,103 @@ html[data-theme="dark"] .themebtn .i-moon {
     transform: translateX(4px);
 }
 
+/* Case studies */
+.case-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.case-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    background: var(--tile);
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.case-kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.case-card h3 {
+    margin-top: 18px;
+    font-size: 1.35rem;
+}
+
+.case-desc {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+.case-metric {
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.case-metric strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fg);
+}
+
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: 16px;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.case-tags li::before {
+    content: "/ ";
+    color: var(--accent);
+}
+
+.case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 22px;
+    font-size: 14px;
+    color: var(--fg);
+    transition: color 0.2s ease;
+}
+
+.case-link:hover {
+    color: var(--accent);
+}
+
+.case-link .arr {
+    transition: transform 0.25s ease;
+}
+
+.case-link:hover .arr {
+    transform: translate(3px, -3px);
+}
+
 /* Contact */
 .contact {
     padding-bottom: 40px;
@@ -1332,9 +1438,70 @@ html.chaos .tool:nth-child(3n) {
     }
 }
 
+@media (min-width: 1000px) {
+    .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+        align-items: end;
+        column-gap: clamp(48px, 7vw, 112px);
+        padding-top: 124px;
+        padding-bottom: 132px;
+    }
+
+    .hero-side {
+        margin-top: 0;
+        padding-top: 20px;
+        border-top: 1px solid var(--rule);
+    }
+
+    .hero-side .roles {
+        margin-top: 0;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .hero-side .role {
+        width: 100%;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .about-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: clamp(48px, 7vw, 104px);
+    }
+
+    .tool-grid {
+        column-gap: clamp(40px, 5vw, 72px);
+    }
+
+    .tool {
+        padding: 22px 0;
+    }
+}
+
+@media (min-width: 680px) {
+    .case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1400px) {
+    .case-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .case-card {
+        padding: 24px;
+    }
+}
+
 @media (max-width: 720px) {
     :root {
-        --gutter: 24px;
+        --gutter: 20px;
     }
 
     .header-inner {
