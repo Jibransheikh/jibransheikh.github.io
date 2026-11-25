@@ -598,6 +598,7 @@ html[data-theme="dark"] .themebtn .i-moon {
 .about-title {
     max-width: 20ch;
     font-size: clamp(1.5rem, 3.8vw, 2rem);
+    font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.035em;
 }
@@ -1080,9 +1081,10 @@ html[data-theme="dark"] .themebtn .i-moon {
     padding-bottom: 40px;
 }
 
-.contact h2 {
+.contact-title {
     max-width: 16ch;
     font-size: clamp(2rem, 5.4vw, 3rem);
+    font-weight: 600;
     line-height: 1.12;
     letter-spacing: -0.045em;
 }
@@ -1108,6 +1110,49 @@ html[data-theme="dark"] .themebtn .i-moon {
 .email-link:hover {
     color: var(--accent);
     border-bottom-color: var(--accent);
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 34px;
+}
+
+.contact-email .email-link {
+    margin-top: 0;
+}
+
+.copy-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.copy-email:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--tile);
+}
+
+.copy-email svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
 }
 
 .phone {

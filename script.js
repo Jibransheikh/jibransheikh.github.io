@@ -40,6 +40,68 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* ---------- Copy email ---------- */
+    document.querySelectorAll("[data-copy-email]").forEach((button) => {
+        const email = button.dataset.copyEmail;
+        const label = button.querySelector(".copy-label");
+        const status = button.parentElement.querySelector("[data-copy-status]");
+        let resetTimer;
+
+        const showResult = (copied) => {
+            if (status) {
+                status.textContent = copied
+                    ? "Email address copied to clipboard."
+                    : "Could not copy the email address. Select it and copy manually.";
+            }
+            if (label) label.textContent = copied ? "Copied" : "Copy";
+            button.setAttribute(
+                "aria-label",
+                copied ? "Email address copied to clipboard" : "Copy email address to clipboard"
+            );
+
+            window.clearTimeout(resetTimer);
+            resetTimer = window.setTimeout(() => {
+                if (status) status.textContent = "";
+                if (label) label.textContent = "Copy";
+                button.setAttribute("aria-label", "Copy email address to clipboard");
+            }, 2400);
+        };
+
+        const fallbackCopy = () => {
+            const input = document.createElement("textarea");
+            input.value = email;
+            input.setAttribute("readonly", "");
+            input.style.position = "fixed";
+            input.style.top = "-9999px";
+            document.body.appendChild(input);
+            input.select();
+
+            let copied = false;
+            try {
+                copied = document.execCommand("copy");
+            } catch (e) {
+                copied = false;
+            }
+
+            input.remove();
+            showResult(copied);
+        };
+
+        button.addEventListener("click", async () => {
+            if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+                fallbackCopy();
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(email);
+                showResult(true);
+            } catch (e) {
+                fallbackCopy();
+            }
+        });
+    });
+
     /* ---------- Mobile menu ---------- */
     const menuButton = document.querySelector(".menubtn");
     const menu = document.getElementById("mobile-menu");
