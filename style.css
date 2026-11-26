@@ -526,6 +526,11 @@ html[data-theme="dark"] .themebtn .i-moon {
     margin-top: 72px;
 }
 
+.affiliations.reveal {
+    transition-duration: 1.8s;
+    transition-timing-function: cubic-bezier(0.16, 0.8, 0.2, 1);
+}
+
 .affiliation-line {
     margin: 0;
     font-size: clamp(1.3rem, 2.8vw, 2.2rem);
@@ -540,11 +545,11 @@ html[data-theme="dark"] .themebtn .i-moon {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0.45;
-    transform: translateY(9px);
-    transition: background-position 1.7s cubic-bezier(0.16, 0.8, 0.2, 1),
-        opacity 1.25s ease,
-        transform 1.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    opacity: 0.32;
+    transform: translateY(14px);
+    transition: background-position 4.4s cubic-bezier(0.12, 0.74, 0.16, 1) 0.15s,
+        opacity 2.6s ease 0.1s,
+        transform 2.6s cubic-bezier(0.16, 0.8, 0.2, 1) 0.1s;
 }
 
 .affiliations.is-in-view .affiliation-line {
@@ -554,9 +559,28 @@ html[data-theme="dark"] .themebtn .i-moon {
 }
 
 .affiliation {
+    display: inline-block;
     color: inherit;
     text-decoration: none;
     -webkit-text-fill-color: transparent;
+    opacity: 0.28;
+    transform: translateY(10px);
+    transition: opacity 2.4s ease var(--affil-delay, 0s),
+        transform 2.4s cubic-bezier(0.16, 0.8, 0.2, 1) var(--affil-delay, 0s),
+        color 0.3s ease 0s;
+}
+
+.affiliations.is-in-view .affiliation {
+    opacity: 1;
+    transform: none;
+}
+
+.affiliation:nth-of-type(2) {
+    --affil-delay: 0.45s;
+}
+
+.affiliation:nth-of-type(3) {
+    --affil-delay: 0.9s;
 }
 
 .affiliation-role,
@@ -582,6 +606,16 @@ html[data-theme="dark"] .themebtn .i-moon {
     font-size: 0.8em;
     color: var(--muted);
     -webkit-text-fill-color: currentColor;
+    opacity: 0.2;
+    transition: opacity 2.2s ease var(--sep-delay, 0.25s);
+}
+
+.affiliation-sep:nth-of-type(2) {
+    --sep-delay: 0.7s;
+}
+
+.affiliations.is-in-view .affiliation-sep {
+    opacity: 1;
 }
 
 .affiliation:hover,
@@ -1765,6 +1799,12 @@ html.chaos .tool-item:nth-child(3n) {
     .affiliation-line {
         background-position: 0 0;
         opacity: 1;
+        transform: none;
+    }
+
+    .affiliation,
+    .affiliation-sep {
+        opacity: 1 !important;
         transform: none;
     }
 
