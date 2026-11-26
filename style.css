@@ -8,6 +8,7 @@
     --fg: #141413;
     --muted: #6e6b65;
     --rule: #e8e6e1;
+    --faint: #e4e2dd;
     --tile: #f6f5f2;
     --accent: #b84a10;
     --accent-soft: rgba(184, 74, 16, 0.12);
@@ -26,6 +27,7 @@ html[data-theme="dark"] {
     --fg: #f2f0ed;
     --muted: #9d9992;
     --rule: #272624;
+    --faint: #2b2a28;
     --tile: #171716;
     --accent: #f07826;
     --accent-soft: rgba(240, 120, 38, 0.16);
@@ -509,30 +511,46 @@ html[data-theme="dark"] .themebtn .i-moon {
 
 /* Affiliations bridge */
 .affiliations {
-    margin-top: 76px;
-    padding: 30px 0 34px;
+    margin-top: 0;
+    padding: 24px 0 28px;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
+    text-align: center;
+}
+
+.hero + .affiliations {
+    padding-top: 16px;
+}
+
+.affiliations + .section {
+    margin-top: 72px;
 }
 
 .affiliation-line {
     margin: 0;
-    font-size: clamp(1.35rem, 3vw, 2.35rem);
-    line-height: 1.38;
+    font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+    line-height: 1.42;
     letter-spacing: -0.035em;
-    color: var(--muted);
-    background-image: linear-gradient(90deg, var(--fg) 0 50%, var(--muted) 50% 100%);
+    text-wrap: balance;
+    color: var(--faint);
+    background-image: linear-gradient(90deg, var(--fg) 0 50%, var(--faint) 50% 100%);
     background-repeat: no-repeat;
     background-size: 200% 100%;
     background-position: 100% 0;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: background-position 1.15s cubic-bezier(0.2, 0.7, 0.2, 1);
+    opacity: 0.45;
+    transform: translateY(9px);
+    transition: background-position 1.7s cubic-bezier(0.16, 0.8, 0.2, 1),
+        opacity 1.25s ease,
+        transform 1.25s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .affiliations.is-in-view .affiliation-line {
     background-position: 0 0;
+    opacity: 1;
+    transform: none;
 }
 
 .affiliation {
@@ -541,13 +559,21 @@ html[data-theme="dark"] .themebtn .i-moon {
     -webkit-text-fill-color: transparent;
 }
 
-.affiliation-role {
+.affiliation-role,
+.affiliation-prep {
     font-family: var(--mono);
     font-size: 0.42em;
     font-weight: 500;
+    vertical-align: super;
+}
+
+.affiliation-role {
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    vertical-align: super;
+}
+
+.affiliation-prep {
+    letter-spacing: 0.04em;
 }
 
 .affiliation-sep {
@@ -1642,9 +1668,11 @@ html.chaos .tool-item:nth-child(3n) {
     }
 
     .affiliations {
-        grid-template-columns: 1fr;
-        gap: 26px;
-        margin-top: 64px;
+        padding: 22px 0 24px;
+    }
+
+    .affiliations + .section {
+        margin-top: 56px;
     }
 
     .work-row {
@@ -1736,6 +1764,8 @@ html.chaos .tool-item:nth-child(3n) {
 
     .affiliation-line {
         background-position: 0 0;
+        opacity: 1;
+        transform: none;
     }
 
     .tool-row {
