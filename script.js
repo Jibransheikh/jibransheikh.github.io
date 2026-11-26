@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "background:#141413; color:#fff; padding:2px 6px;"
     );
     console.log(
-        "%cJibransheikh.work@gmail.com",
+        "%cjibran@binboi.biz",
         "color:#6e6b65; font-family:monospace; font-size:12px;"
     );
 });
