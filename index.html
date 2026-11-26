@@ -206,13 +206,64 @@
                 <span class="section-aside">What I reach for</span>
             </div>
 
-            <div class="tool-grid">
-                <div class="tool reveal"><span class="tool-name">Flutter</span><span class="tool-cat">Apps</span></div>
-                <div class="tool reveal" style="--delay: 0.04s"><span class="tool-name">Supabase</span><span class="tool-cat">Backend</span></div>
-                <div class="tool reveal" style="--delay: 0.08s"><span class="tool-name">Python &amp; JS</span><span class="tool-cat">Scripting</span></div>
-                <div class="tool reveal" style="--delay: 0.12s"><span class="tool-name">HTML &amp; CSS</span><span class="tool-cat">Web</span></div>
-                <div class="tool reveal" style="--delay: 0.16s"><span class="tool-name">MS SQL Server</span><span class="tool-cat">Data</span></div>
-                <div class="tool reveal" style="--delay: 0.2s"><span class="tool-name">Figma &amp; SEO</span><span class="tool-cat">Design / Growth</span></div>
+            <svg class="tool-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+                <symbol id="icon-figma" viewBox="0 0 24 24">
+                    <path d="M9 2h3v6H9a3 3 0 0 1 0-6Z" fill="currentColor"/>
+                    <path d="M12 2h3a3 3 0 0 1 0 6h-3V2Z" fill="currentColor" opacity=".6"/>
+                    <path d="M9 8h3v6H9a3 3 0 0 1 0-6Z" fill="currentColor" opacity=".6"/>
+                    <circle cx="15" cy="11" r="3" fill="currentColor" opacity=".6"/>
+                    <path d="M9 14h3v3a3 3 0 1 1-3-3Z" fill="currentColor"/>
+                </symbol>
+                <symbol id="icon-supabase" viewBox="0 0 24 24">
+                    <path d="M13.2 2 5 13h6l-1.8 9L19 10.5h-6.2L13.2 2Z" fill="currentColor"/>
+                </symbol>
+                <symbol id="icon-python" viewBox="0 0 24 24">
+                    <path d="M12 2c-4 0-4.8 1.7-4.8 4v3h7.3v2H6.4C4.2 11 2 12.8 2 15s2.2 4 4.4 4H8v-3c0-2.3 1.7-4 4-4h5c2.3 0 4-1.7 4-4V6c0-2.3-1.7-4-4-4h-5Zm-2.2 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/>
+                    <path d="M12 22c4 0 4.8-1.7 4.8-4v-3H9.5v-2h8.1c2.2 0 4.4-1.8 4.4-4s-2.2-4-4.4-4H16v3c0 2.3-1.7 4-4 4H7c-2.3 0-4 1.7-4 4v2c0 2.3 1.7 4 4 4h5Zm2.2-3a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" fill="currentColor" opacity=".55"/>
+                </symbol>
+                <symbol id="icon-html" viewBox="0 0 24 24">
+                    <path d="M4 3h16l-1.5 17L12 22l-6.5-2L4 3Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 6v11M8.5 7.5h7" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <text x="12" y="16.5" text-anchor="middle" font-family="monospace" font-size="6" fill="currentColor">5</text>
+                </symbol>
+                <symbol id="icon-css" viewBox="0 0 24 24">
+                    <path d="M4 3h16l-1.5 17L12 22l-6.5-2L4 3Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M8 8h8M7.5 12h9M9.5 16h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </symbol>
+                <symbol id="icon-seo" viewBox="0 0 24 24">
+                    <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="m15.5 15.5 5 5M7 12l2-2 2 2 3-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </symbol>
+            </svg>
+
+            <div class="tool-ribbon reveal is-paused" role="img" tabindex="0"
+                aria-label="Tools I use: Figma, Supabase, Python, HTML, CSS and SEO. Hover or focus pauses the moving logos.">
+                <div class="tool-window" aria-hidden="true">
+                    <div class="tool-row tool-row--left">
+                        <div class="tool-sequence">
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-figma"/></svg><span class="tool-label">Figma</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-supabase"/></svg><span class="tool-label">Supabase</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-python"/></svg><span class="tool-label">Python</span></span>
+                        </div>
+                        <div class="tool-sequence">
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-figma"/></svg><span class="tool-label">Figma</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-supabase"/></svg><span class="tool-label">Supabase</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-python"/></svg><span class="tool-label">Python</span></span>
+                        </div>
+                    </div>
+                    <div class="tool-row tool-row--right">
+                        <div class="tool-sequence">
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-html"/></svg><span class="tool-label">HTML</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-css"/></svg><span class="tool-label">CSS</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-seo"/></svg><span class="tool-label">SEO</span></span>
+                        </div>
+                        <div class="tool-sequence">
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-html"/></svg><span class="tool-label">HTML</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-css"/></svg><span class="tool-label">CSS</span></span>
+                            <span class="tool-item"><svg viewBox="0 0 24 24"><use href="#icon-seo"/></svg><span class="tool-label">SEO</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

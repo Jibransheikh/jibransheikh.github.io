@@ -742,39 +742,106 @@ html[data-theme="dark"] .themebtn .i-moon {
 }
 
 /* Toolkit */
-.tool-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 36px;
+.tool-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-.tool {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 17px 0;
+.tool-ribbon {
+    padding: 20px 0;
     border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
 }
 
-.tool-name {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    transition: color 0.2s ease;
+.tool-window {
+    display: grid;
+    gap: 14px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
-.tool:hover .tool-name {
+.tool-row {
+    display: flex;
+    width: 200%;
+    color: var(--fg);
+    opacity: 0.45;
+    transition: opacity 0.5s ease;
+}
+
+.tool-sequence {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0 0 50%;
+    gap: 16px;
+    padding: 0 18px;
+}
+
+.tool-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.tool-item svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+
+.tool-row--left {
+    animation: marquee-left 42s linear infinite;
+}
+
+.tool-row--right {
+    transform: translate3d(-50%, 0, 0);
+    animation: marquee-right 48s linear infinite;
+}
+
+.tool-ribbon.is-in-view .tool-row {
+    opacity: 1;
+    will-change: transform;
+}
+
+.tool-ribbon.is-paused .tool-row,
+.tool-ribbon:hover .tool-row,
+.tool-ribbon:focus .tool-row {
+    animation-play-state: paused;
+}
+
+.tool-item:hover {
     color: var(--accent);
 }
 
-.tool-cat {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    white-space: nowrap;
+html:not(.has-js) .tool-row {
+    opacity: 1;
+}
+
+@keyframes marquee-left {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translate3d(-50%, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 /* Work */
@@ -1421,7 +1488,7 @@ html.chaos .work-row:nth-child(even) h3 {
     transform: translateX(-2px) rotate(0.8deg);
 }
 
-html.chaos .tool:nth-child(3n) {
+html.chaos .tool-item:nth-child(3n) {
     transform: rotate(-1.2deg);
 }
 
@@ -1487,9 +1554,6 @@ html.chaos .tool:nth-child(3n) {
         gap: 48px;
     }
 
-    .tool-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
 }
 
 @media (min-width: 1000px) {
@@ -1527,13 +1591,6 @@ html.chaos .tool:nth-child(3n) {
         gap: clamp(48px, 7vw, 104px);
     }
 
-    .tool-grid {
-        column-gap: clamp(40px, 5vw, 72px);
-    }
-
-    .tool {
-        padding: 22px 0;
-    }
 }
 
 @media (min-width: 680px) {
@@ -1638,8 +1695,19 @@ html.chaos .tool:nth-child(3n) {
 }
 
 @media (max-width: 420px) {
-    .tool-grid {
-        grid-template-columns: 1fr;
+    .tool-sequence {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .tool-item {
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .tool-item svg {
+        width: 16px;
+        height: 16px;
     }
 
     .status {
@@ -1663,5 +1731,23 @@ html.chaos .tool:nth-child(3n) {
     .has-js .reveal {
         opacity: 1;
         transform: none;
+    }
+
+    .tool-row {
+        width: 100%;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .tool-sequence {
+        flex: 1 1 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .tool-sequence + .tool-sequence {
+        display: none;
     }
 }

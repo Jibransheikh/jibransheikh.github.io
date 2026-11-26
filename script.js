@@ -164,6 +164,25 @@ document.addEventListener("DOMContentLoaded", () => {
         reveals.forEach((element) => element.classList.add("is-visible"));
     }
 
+    /* ---------- Toolkit ribbon ---------- */
+    const toolkitRibbon = document.querySelector(".tool-ribbon");
+
+    if (toolkitRibbon) {
+        if ("IntersectionObserver" in window) {
+            const toolkitObserver = new IntersectionObserver(
+                ([entry]) => {
+                    toolkitRibbon.classList.toggle("is-in-view", entry.isIntersecting);
+                    toolkitRibbon.classList.toggle("is-paused", !entry.isIntersecting);
+                },
+                { threshold: 0.2 }
+            );
+            toolkitObserver.observe(toolkitRibbon);
+        } else {
+            toolkitRibbon.classList.add("is-in-view");
+            toolkitRibbon.classList.remove("is-paused");
+        }
+    }
+
     /* ---------- Current section in nav ---------- */
     const navLinks = Array.from(document.querySelectorAll('.desknav a[href^="#"]'));
 
