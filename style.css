@@ -4,14 +4,15 @@
 :root {
     color-scheme: light;
 
-    --bg: #ffffff;
+    --bg: #f6f4ef;
     --fg: #141413;
     --muted: #6e6b65;
-    --rule: #e8e6e1;
-    --faint: #e4e2dd;
-    --tile: #f6f5f2;
+    --rule: #e5e1d8;
+    --faint: #e2ded5;
+    --tile: #fbfaf7;
     --accent: #b84a10;
     --accent-soft: rgba(184, 74, 16, 0.12);
+    --grain-opacity: 0.075;
 
     --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
@@ -23,14 +24,15 @@
 html[data-theme="dark"] {
     color-scheme: dark;
 
-    --bg: #0e0e0d;
+    --bg: #121212;
     --fg: #f2f0ed;
     --muted: #9d9992;
-    --rule: #272624;
-    --faint: #2b2a28;
-    --tile: #171716;
+    --rule: #2a2a28;
+    --faint: #242424;
+    --tile: #1e1e1e;
     --accent: #f07826;
     --accent-soft: rgba(240, 120, 38, 0.16);
+    --grain-opacity: 0.05;
 }
 
 /* ---------------------------------------------
@@ -58,6 +60,18 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    opacity: var(--grain-opacity);
+    transition: opacity 0.3s ease;
 }
 
 img {
@@ -1299,32 +1313,6 @@ html:not(.has-js) .tool-row {
     width: 14px;
     height: 14px;
     flex: none;
-}
-
-.phone {
-    display: block;
-    width: fit-content;
-    margin-top: 18px;
-    font-size: 15px;
-    color: var(--muted);
-    transition: color 0.2s ease;
-}
-
-.phone:hover {
-    color: var(--fg);
-}
-
-.phone-reveal {
-    margin-top: 24px;
-}
-
-.phone-reveal .specialty {
-    min-width: 212px;
-}
-
-.phone-link {
-    margin-top: 14px;
-    color: var(--accent);
 }
 
 /* ---------------------------------------------
